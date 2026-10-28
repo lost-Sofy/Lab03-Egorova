@@ -126,15 +126,42 @@
 // Console.WriteLine($"Проходит по правилам: {isEligibleByRules}");
 // Console.WriteLine($"Итоговый балл: {totalScore}");
 
-using System.Runtime.CompilerServices;
+// using System.Runtime.CompilerServices;
+
+// Console.WriteLine();
+// Console.WriteLine("Чётное или нечётное");
+
+
+// Console.Write("Введите целое число: ");
+// string number = Console.ReadLine();
+// int numberParse = int.Parse(number);
+
+// bool isEven = numberParse % 2 == 0;
+
+// Console.WriteLine($"Четное число: {isEven}");
 
 Console.WriteLine();
-Console.WriteLine("Чётное или нечётное");
+Console.WriteLine("Инкремент в выражении");
 
-Console.Write("Введите целое число: ");
-string number = Console.ReadLine();
-int numberParse = int.Parse(number);
+int num = 0;
+int num1 = 0;
+int resultOne = ++num;
+int resultTwo = num1++;
 
-bool isEven = numberParse % 2 == 0;
+//Вариант 1
+Console.WriteLine($"Префикс: {resultOne}");  //Прибавляет 1 и сразу выводит ответ
+Console.WriteLine($"Постфикс: {resultTwo}");  /*Выводит 0 и только потом сохраняет обновленный результат*/
 
-Console.WriteLine($"Четное число: {isEven}");
+//Вариант 2
+int operateOne = ++num * 5;
+int operateTwo = num1++ * 5;
+
+Console.WriteLine($"С префиксом: {operateOne}");  /*Все как обычно сначала увеличится переменная потом умножится*/
+Console.WriteLine($"С постфиксом: {operateTwo}");  /*Выведет 5 потому что сначала умножиться изначальное значение 1 и только потом обновиться переменная */
+
+//Вариант 3
+int sumOne = ++num + ++num;
+int sumTwo = num1++ + num1++;
+
+Console.WriteLine($"С префиксом: {sumOne}");  /*Сохраниться 3 и к ней прибавится обновленное число 4 = 7*/
+Console.WriteLine($"С постфиксом: {sumTwo}");  /*Значение 2 привиться к обновленному 3 = 5*/
